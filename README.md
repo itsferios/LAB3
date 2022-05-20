@@ -42,8 +42,25 @@ As for the Decision Tree, we implemented two different methods to identify the b
 The complexity of the Decision Tree is very high, so we implemented tree pruning to reduce or avoid overfitting.
 This last part we were not able to execute because they took too long (we never got an output).
 
+Regarding the second goal, we used several models, to determine which one is best for our dataset, through a section of Compare. 
+The used models are:
+ * ARIMA/SARIMAX
+ * Holt winter
+     * Simple exponential smoothing - ses
+     * Double exponential smoothing - des
+     * Triple exponential smoothing - tes
+ * Extra trees regressor
+ * Linear regression
+ * Support Vector Regressor - svm
+ 
+To compare the models, we use:
+* MAE: Mean Absolute Error is the average over the verification sample of the absolute values of the differences between forecast and the corresponding observation.
+* RMSE: Root Mean Squared Error is the square root of the mean of the square of all of the error.
+* MAPE: Mean Absolute Percentage Error is a measure of prediction accuracy of a forecasting method in statistics.
 
+As a last step, we selected only pre-COVID years (before 2019) and made the predictions on them, without the influence of the test set, then compared the result with what actually happened. 
 
+As we can see in the graph, the COVID situation led to decrease in the number of contracts, compared to the prediction based on data through 2019.
 
 
 
